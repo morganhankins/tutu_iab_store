@@ -1,0 +1,7 @@
+{
+  "name": "begin-app-post-iab-set",
+  "dependencies": {
+    "@architect/functions": "latest",
+    "@begin/data": "latest"
+  }
+}

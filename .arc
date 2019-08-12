@@ -9,6 +9,7 @@ post /api/cats
 patch /api/cats/:catID
 delete /api/cats/:catID
 post /iab/set
+get /iab/has
 
 @tables
 data

@@ -21,7 +21,10 @@ exports.handler = async function http(req) {
 	    body: 'fail'
 	}
     } else {
-	await data.set({'iab', key, 'y'}) // TODO :)
+	let table = 'iab';
+	let y = 'y';
+
+	await data.set({table, key, y});
 	
 	return {
 	    status: 200,

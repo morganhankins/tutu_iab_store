@@ -8,7 +8,8 @@ module.exports = {
     'ecmaVersion': 2018
   },
   'rules': {
-    'semi': ["error", "never"],
+      'no-mixed-spaces-and-tabs': 'off',
+      'semi': ["error", "never"],
     // enable additional rules
     'linebreak-style': ['error', 'unix'],
     // node specific

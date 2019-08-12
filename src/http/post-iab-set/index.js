@@ -6,25 +6,27 @@
 let data = require('@begin/data')
 
 exports.handler = async function http(req) {
-  console.log(req)
 
-    let key = req.body['key']
-    let token = await data.get({'iab', key})
+    console.log(req)
 
-    if(token == null) {
-	// fail token already exits
+    let key = req.body['key'];
+
+    let token = await data.get({table: 'iab', key:key});
+    
+    // fail token already exits
+    if(token != null) {
 	return {
 	    status: 401,
 	    type: 'application/json; charset=utf8',
-	    body: "fail"
+	    body: 'fail'
 	}
     } else {
-	await data.set({table, key, "y"}) // TODO :)
+	await data.set({'iab', key, 'y'}) // TODO :)
 	
 	return {
 	    status: 200,
 	    type: 'application/json; charset=utf8',
-	    body: "ok"
+	    body: 'ok'
 	}
     }
 }

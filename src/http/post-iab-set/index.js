@@ -15,14 +15,16 @@ exports.handler = async function http(req) {
 	// fail token already exits
 	return {
 	    status: 401,
-	    location: '/iab/set'
+	    type: 'application/json; charset=utf8',
+	    body: "fail"
 	}
     } else {
 	await data.set({table, key, "y"}) // TODO :)
 	
 	return {
 	    status: 200,
-	    location: '/iab/set'
+	    type: 'application/json; charset=utf8',
+	    body: "ok"
 	}
     }
 }
